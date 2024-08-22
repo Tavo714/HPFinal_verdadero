@@ -7,8 +7,7 @@ use HPIIFINAL_BIBLIOTECA
 
 
 USE master;
-ALTER DATABASE HPIIFINAL_BIBLIOTECA
-SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+
 
 
 -- Crear la tabla Distritos primero
@@ -21,9 +20,9 @@ CREATE TABLE Distritos (
 CREATE TABLE Usuarios (
     UsuarioID INT PRIMARY KEY IDENTITY(1,1),
     Nombre NVARCHAR(100) NOT NULL,
-    Email NVARCHAR(100) UNIQUE NOT NULL,
+    Email NVARCHAR(100)  NOT NULL,
     FechaRegistro DATE NOT NULL,
-    DNI CHAR(8) UNIQUE NOT NULL,
+    DNI CHAR(8)  NOT NULL,
     Direccion NVARCHAR(255) NOT NULL,
     DistritoID INT NOT NULL,
     Telefono CHAR(9) NOT NULL,
@@ -31,13 +30,6 @@ CREATE TABLE Usuarios (
     Penalidad NVARCHAR(2) NOT NULL
 );
 
--- Eliminar la restricción UNIQUE en la columna email
-ALTER TABLE Usuarios
-DROP CONSTRAINT Email;
-
--- Eliminar la restricción UNIQUE en la columna dni
-ALTER TABLE Usuarios
-DROP CONSTRAINT DNI;
 
 
 CREATE TABLE Autores (

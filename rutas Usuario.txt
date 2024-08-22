@@ -1,15 +1,16 @@
 CRUD:
 
 Listado:
-http://localhost:5064/api/Usuario/GetUsuarios
+http://localhost:5196/api/Usuario/GetUsuarios
 
-Buscar:
-http://localhost:5064/api/Usuario/GetUsuario7
+Buscar id:
+http://localhost:5196/api/Usuario/GetUsuario7
 
 Post:
-http://localhost:5064/api/Usuario/PostUsuario
+http://localhost:5196/api/Usuario/PostUsuario
 
-Put: FALTA ARREGLAR.
+Put: 
+http://localhost:5196/api/Usuario/PutUsuario
 
 Delete:
-http://localhost:5064/api/Usuario/DeleteUsuario/27
+http://localhost:5196/api/Usuario/DeleteUsuario/26

@@ -26,7 +26,7 @@ namespace PrjFinalHp2.Controllers
         }
 
         // GET api/<UsuarioController>/5
-        [HttpGet("GetUsuario{id}")]
+        [HttpGet("GetUsuario/{id}")]
         public Usuario GetUsuario(int id)
         {
             var buscado = ctx.Usuarios.Find(id);
@@ -69,7 +69,7 @@ namespace PrjFinalHp2.Controllers
         [HttpDelete("DeleteUsuario/{id}")]
         public string DeleteUsuario(int id)
         {
-            ctx.Usuarios.Find(id)!.EstadoUsuario = "Activo";
+            ctx.Usuarios.Find(id)!.EstadoUsuario = "Inactivo";
             ctx.SaveChanges();
 
             return $"Usuario {id} fue eliminado logicamente";

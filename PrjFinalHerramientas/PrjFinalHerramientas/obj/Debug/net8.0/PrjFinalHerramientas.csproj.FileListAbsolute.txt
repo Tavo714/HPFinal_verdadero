@@ -135,3 +135,4 @@ D:\GITrepositories\final_hpii\PrjFinalHerramientas\PrjFinalHerramientas\obj\Debu
 D:\GITrepositories\final_hpii\PrjFinalHerramientas\PrjFinalHerramientas\obj\Debug\net8.0\PrjFinalHerramientas.pdb
 D:\GITrepositories\final_hpii\PrjFinalHerramientas\PrjFinalHerramientas\obj\Debug\net8.0\PrjFinalHerramientas.genruntimeconfig.cache
 D:\GITrepositories\final_hpii\PrjFinalHerramientas\PrjFinalHerramientas\obj\Debug\net8.0\ref\PrjFinalHerramientas.dll
+D:\GITrepositories\final_hpii\PrjFinalHerramientas\PrjFinalHerramientas\obj\Debug\net8.0\PrjFinalHerramientas.sourcelink.json
