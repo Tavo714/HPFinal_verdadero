@@ -19,7 +19,8 @@ public partial class Prestamo
 
     public string Estado { get; set; } = null!;
 
-    public virtual Libro Libro { get; set; } = null!;
+    // Hacer que Libro y Usuario sean opcionales
+    public virtual Libro? Libro { get; set; }
 
-    public virtual Usuario Usuario { get; set; } = null!;
+    public virtual Usuario? Usuario { get; set; }
 }
