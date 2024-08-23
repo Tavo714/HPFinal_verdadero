@@ -19,8 +19,8 @@ namespace PrjFinalHerramientas.Controllers
         [HttpGet("GetLibros")]
         public List<Libro> GetLibros()
         {
-            var listaLibros = context.Libros.ToList();
-            return listaLibros;
+            var listado = context.Libros.Where(c => c.Estado == "Activo").ToList();
+            return listado;
         }
 
         // GET api/<LibroController>/5
@@ -64,7 +64,7 @@ namespace PrjFinalHerramientas.Controllers
         }
 
         // DELETE api/<LibroController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteLibro/{id}")]
         public String DeleteLibro(int id)
         {
             var libroBuscado = context.Libros.Find(id);

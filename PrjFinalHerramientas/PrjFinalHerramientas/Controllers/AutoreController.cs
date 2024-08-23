@@ -19,8 +19,10 @@ namespace PrjFinalHerramientas.Controllers
         [HttpGet("GetAutores")]
         public List<Autore> GetAutores()
         {
-            var listaAutores = context.Autores.ToList();
-            return listaAutores;
+            //var listaAutores = context.Autores.ToList();
+            //return listaAutores;
+            var listado = context.Autores.Where(c => c.Estado == "Activo").ToList();
+            return listado;
         }
 
         // GET api/<AutoreController>/5
@@ -37,7 +39,7 @@ namespace PrjFinalHerramientas.Controllers
         {
             try
             {
-                context.Autores.Add(autor);
+                context.Autores.Add(autor); 
                 context.SaveChanges();
                 return $"Autor {autor.Nombre} fue registrado correctamente";
             }
