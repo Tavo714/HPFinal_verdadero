@@ -251,3 +251,4 @@ select * from Usuarios
 select * from autores
 select * from Libros
 select * from Prestamos
+select * from Distritos
