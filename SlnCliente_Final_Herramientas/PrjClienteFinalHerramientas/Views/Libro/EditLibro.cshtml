@@ -1,18 +1,22 @@
 ﻿@model PrjClienteFinalHerramientas.Models.Libro
 
 @{
-    ViewData["Title"] = "CreateLibro";
+    ViewData["Title"] = "EditLibro";
 }
 
-<h1>Agregar Libro</h1>
+<h1>Ediar tLibro</h1>
 
 <h4>Libro</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateLibro">
+        <form asp-action="EditLibro">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
+            <div class="form-group">
+                <label asp-for="LibroId" class="control-label"></label>
+                <input asp-for="LibroId" class="form-control" readonly="readonly"/>
+                <span asp-validation-for="LibroId" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Titulo" class="control-label"></label>
                 <input asp-for="Titulo" class="form-control" />
@@ -35,12 +39,11 @@
             </div>
             <br />
             <div class="form-group">
-                <input type="submit" value="Agregar" class="btn btn-primary" />|<a asp-action="IndexLibros">Regresar a la Lista</a>
+                <input type="submit" value="Guardar" class="btn btn-primary" />|<a asp-action="IndexLibros">Regresar a la Lista</a>
             </div>
         </form>
     </div>
 </div>
-
 
 
 @section Scripts {

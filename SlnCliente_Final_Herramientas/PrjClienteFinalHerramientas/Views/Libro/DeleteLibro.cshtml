@@ -1,11 +1,12 @@
 ﻿@model PrjClienteFinalHerramientas.Models.Libro
 
 @{
-    ViewData["Title"] = "DetailsLibro";
+    ViewData["Title"] = "DeleteLibro";
 }
 
-<h1>Detalles del Libro: @ViewBag.ownerName</h1>
+<h1>Eliminar Libro</h1>
 
+<h3>Seguro que quieres eliminar el Libro: @ViewBag.OwnerName?</h3>
 <div>
     <h4>Libro</h4>
     <hr />
@@ -47,8 +48,9 @@
             @Html.DisplayFor(model => model.Estado)
         </dd>
     </dl>
-</div>
-<div>
-    @Html.ActionLink("Editar", "EditLibro", new {  id = Model.LibroId  }) |
-    <a asp-action="IndexLibros">Regresar a la Lista</a>
+    
+    <form asp-action="DeleteLibro">
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="IndexLibros">Regresar a la Lista</a>
+    </form>
 </div>

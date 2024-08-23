@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PrjFinalHerramientas.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -19,7 +20,18 @@ namespace PrjFinalHerramientas.Controllers
         [HttpGet("GetLibros")]
         public List<Libro> GetLibros()
         {
-            var listado = context.Libros.Where(c => c.Estado == "Activo").ToList();
+            var listado = context.Libros.Include(l => l.Autor).Where(c => c.Estado == "Activo").Select(l => new Libro
+            {
+                LibroId = l.LibroId,
+                Titulo = l.Titulo,
+                AñoPublicacion = l.AñoPublicacion,
+                Autor = new Autore
+                {
+                    AutorId = l.Autor!.AutorId,
+                    Nombre = l.Autor.Nombre
+                },
+                Stock = l.Stock
+            }).ToList();
             return listado;
         }
 

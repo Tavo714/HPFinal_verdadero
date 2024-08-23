@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GITrepositories\\final_hpii\\PrjFinalHerramientas\\PrjFinalHerramientas\\PrjFinalHerramientas.csproj": {}
+    "D:\\4°cCiclo\\Herramientas de Programación\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\PrjFinalHerramientas.csproj": {}
   },
   "projects": {
-    "D:\\GITrepositories\\final_hpii\\PrjFinalHerramientas\\PrjFinalHerramientas\\PrjFinalHerramientas.csproj": {
+    "D:\\4°cCiclo\\Herramientas de Programación\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\PrjFinalHerramientas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GITrepositories\\final_hpii\\PrjFinalHerramientas\\PrjFinalHerramientas\\PrjFinalHerramientas.csproj",
+        "projectUniqueName": "D:\\4°cCiclo\\Herramientas de Programación\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\PrjFinalHerramientas.csproj",
         "projectName": "PrjFinalHerramientas",
-        "projectPath": "D:\\GITrepositories\\final_hpii\\PrjFinalHerramientas\\PrjFinalHerramientas\\PrjFinalHerramientas.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\GITrepositories\\final_hpii\\PrjFinalHerramientas\\PrjFinalHerramientas\\obj\\",
+        "projectPath": "D:\\4°cCiclo\\Herramientas de Programación\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\PrjFinalHerramientas.csproj",
+        "packagesPath": "C:\\Users\\gero6\\.nuget\\packages\\",
+        "outputPath": "D:\\4°cCiclo\\Herramientas de Programación\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gero6\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

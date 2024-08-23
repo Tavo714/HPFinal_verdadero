@@ -9,10 +9,19 @@ namespace PrjClienteFinalHerramientas.Controllers
     public class LibroController : Controller
     {
         List<Libro> LibroLisT = new List<Libro>();
-        string rutaBase = "http://localhost:5196/api/Libro/";
+        string rutaBase = "http://localhost:5196/api/Libro/"; 
+        string rutaAutores = "http://localhost:5196/api/Autore/";
 
-        
 
+        public async Task<List<Autor>> GetAutores()
+        {
+            using (HttpClient httpClient = new HttpClient())
+            {
+                var respuesta = await httpClient.GetAsync(rutaAutores + "GetAutores");
+                string cadena = await respuesta.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<Autor>>(cadena)!;
+            }
+        }
 
         public async Task<List<Libro>> GetLibros()
         {
@@ -22,6 +31,7 @@ namespace PrjClienteFinalHerramientas.Controllers
                 var respuesta = await httpClient.GetAsync(rutaBase + "GetLibros");
                 //covertir el contenido devuelto a una cadena(string)
                 string cadena = await respuesta.Content.ReadAsStringAsync();
+                Console.WriteLine("Response content: " + cadena);
                 //deserealizar la variable cadena Json a un List de propietario
                 return JsonConvert.DeserializeObject<List<Libro>>(cadena)!;
             };
@@ -91,7 +101,6 @@ namespace PrjClienteFinalHerramientas.Controllers
 
 
 
-
         // GET: LibroController
         public async Task<ActionResult> IndexLibros()
         {
@@ -108,8 +117,10 @@ namespace PrjClienteFinalHerramientas.Controllers
         }
 
         // GET: LibroController/Create
-        public ActionResult CreateLibro()
+        public async Task<ActionResult> CreateLibro()
         {
+            var autores = await GetAutores();
+            ViewBag.Autores = new SelectList(autores, "AutorId", "Nombre");
             return View();
         }
 
@@ -135,13 +146,16 @@ namespace PrjClienteFinalHerramientas.Controllers
             {
                 ViewBag.mensaje = ex.InnerException!.Message;
             }
-    
+            var autores = await GetAutores();
+            ViewBag.Autores = new SelectList(autores, "AutorId", "Nombre");
             return View(objetoLibro);
         }
 
         // GET: LibroController/Edit/5
         public async Task<ActionResult> EditLibro(int id)
         {
+            var autores = await GetAutores();
+            ViewBag.Autores = new SelectList(autores, "AutorId", "Nombre");
             var libroBuscado = await GetLibro(id);
             return View(libroBuscado);
         }
@@ -166,6 +180,8 @@ namespace PrjClienteFinalHerramientas.Controllers
             {
                 ViewBag.mensaje = ex.InnerException!.Message;
             }
+            var autores = await GetAutores();
+            ViewBag.Autores = new SelectList(autores, "AutorId", "Nombre");
             return View(objetoLibro);
         }
 

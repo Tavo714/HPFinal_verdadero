@@ -12,17 +12,7 @@ JSON:
   "libros": []
   
 }
-http://localhost:5196/api/Autore/PutAutor/{id}
-JSON
-{
-  
-  "nombre": "Rosas Ortiz Gabriel",
-  "nacionalidad": "Peruano",
-  "fechaNacimiento": "2006-02-06",
-  "estado": "Activo",
-  "libros": []
-  
-}
+
 http://localhost:5196/api/Autore/PutAutor
 {
   "autorId": {id},
@@ -63,4 +53,4 @@ JSON
   "prestamos": []
 }
 
-http://localhost:5196/api/Libro/{id}
+http://localhost:5196/api/Libro/DeleteLibro/{id}

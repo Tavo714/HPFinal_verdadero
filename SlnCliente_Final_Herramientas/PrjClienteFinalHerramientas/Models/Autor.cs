@@ -8,7 +8,7 @@ namespace PrjClienteFinalHerramientas.Models
         public int AutorId { get; set; }
         //
         [Required(ErrorMessage = "El nombre del autor es obligatorio...")]
-        [Display(Name = " Nombre: ")]
+        [Display(Name = "Autor: ")]
         public string Nombre { get; set; } = null!;
         //
         [Required(ErrorMessage = "La nacionalidad del autor es obligatorio...")]

@@ -21,8 +21,9 @@ namespace PrjClienteFinalHerramientas.Models
         [Range(0, int.MaxValue, ErrorMessage = "El stock debe ser un número positivo.")]
         [Display(Name = "Stock: ")]
         public int Stock { get; set; }
-
         
         public string? Estado { get; set; } 
+        
+        public Autor? Autor { get; set; }
     }
 }
