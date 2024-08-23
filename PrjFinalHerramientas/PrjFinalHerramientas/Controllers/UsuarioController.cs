@@ -49,7 +49,7 @@ namespace PrjFinalHp2.Controllers
             }
         }
 
-        // PUT api/<UsuarioController>/5
+        //PUT api/<UsuarioController>/5
         [HttpPut("PutUsuario")]
         public string PutUsuario([FromBody] Usuario value)
         {
@@ -64,6 +64,9 @@ namespace PrjFinalHp2.Controllers
                 return ex.InnerException!.Message;
             }
         }
+
+
+
 
         // DELETE api/<UsuarioController>/5
         [HttpDelete("DeleteUsuario/{id}")]

@@ -25,7 +25,7 @@ public partial class Usuario
 
     public string Penalidad { get; set; } = null!;
 
-    public virtual Distrito? Distrito { get; set; } //
+    public virtual Distrito? Distrito { get; set; } 
 
     public virtual ICollection<Prestamo> Prestamos { get; set; } = new List<Prestamo>();
 }
