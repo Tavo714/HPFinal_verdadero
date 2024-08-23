@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrjFinalHerramientas.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +9,69 @@ namespace PrjFinalHerramientas.Controllers
     [ApiController]
     public class LibroController : ControllerBase
     {
-        // GET: api/<LibroController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly HpiifinalBibliotecaContext context;
+        public LibroController(HpiifinalBibliotecaContext _context)
         {
-            return new string[] { "value1", "value2" };
+            context = _context;
+        }
+
+        // GET: api/<LibroController>
+        [HttpGet("GetLibros")]
+        public List<Libro> GetLibros()
+        {
+            var listaLibros = context.Libros.ToList();
+            return listaLibros;
         }
 
         // GET api/<LibroController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("GetLibro/{id}")]
+        public Libro GetLibro(int id)
         {
-            return "value";
+            var libroBuscado = context.Libros.Find(id);
+            return libroBuscado!;
         }
 
         // POST api/<LibroController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("PostLibro")]
+        public String PostLibro([FromBody] Libro libro)
         {
+            try
+            {
+                context.Libros.Add(libro);
+                context.SaveChanges();
+                return $"Libro: {libro.Titulo} registrado correctamente...";
+            }
+            catch (Exception ex)
+            {
+                return ex.InnerException!.Message;
+            }
         }
 
         // PUT api/<LibroController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("PutLibro")]
+        public String PutLibro( [FromBody] Libro libro)
         {
+            try
+            {
+                context.Libros.Update(libro);
+                context.SaveChanges();
+                return $"Libro: {libro.LibroId} modificado correctamente...";
+            }
+            catch (Exception ex)
+            {
+                return ex.InnerException!.Message;
+            }
         }
 
         // DELETE api/<LibroController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public String DeleteLibro(int id)
         {
+            var libroBuscado = context.Libros.Find(id);
+            context.Libros.Find(id)!.Estado = "Inactivo";
+            context.SaveChanges();
+
+            return $"Libro {libroBuscado!.Titulo} eliminado exitosamente.";
         }
     }
 }
