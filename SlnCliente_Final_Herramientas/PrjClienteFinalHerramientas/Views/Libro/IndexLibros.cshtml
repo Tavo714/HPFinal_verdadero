@@ -8,6 +8,7 @@
 
 <p>
     <a asp-action="CreateLibro">Agregar</a>
+    <a asp-controller="ListarLibrosNoDevueltos" asp-action="ListarLibrosNoDevueltos" class="btn btn-info">Consulta1</a>
 </p>
 
 @if (TempData["mensaje"] != null)
@@ -61,8 +62,9 @@
                 
                 <td>
                         @Html.ActionLink("Editar", "EditLibro", new {  id=item.LibroId  }) |
-                        @Html.ActionLink("Detalles", "DetailsLibro", new { id = item.LibroId, ownerName = item.Titulo }) |
-                        @Html.ActionLink("Eliminar", "DeleteLibro", new { id = item.LibroId, ownerName = item.Titulo })
+                        @Html.ActionLink("Detalles", "DetailsLibro", new { id = item.LibroId }) |
+                        @Html.ActionLink("Eliminar", "DeleteLibro", new { id = item.LibroId }) |
+                        
                 </td>
             </tr>
     }

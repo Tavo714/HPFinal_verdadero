@@ -102,3 +102,66 @@ BEGIN
         RETURN 0; -- Indica que no hay stock disponible
     END
 END;
+
+--Procedimiento para Listar Libros No Devueltos
+CREATE PROCEDURE ListarLibrosNoDevueltos
+AS
+BEGIN
+    SELECT 
+        p.PrestamoID,
+        u.UsuarioID,
+        u.Nombre AS UsuarioNombre,
+        l.LibroID,
+        l.Titulo AS LibroTitulo,
+        p.FechaPrestamo,
+        p.FechaDevolucion
+    FROM 
+        Prestamos p
+    INNER JOIN 
+        Usuarios u ON p.UsuarioID = u.UsuarioID
+    INNER JOIN 
+        Libros l ON p.LibroID = l.LibroID
+    WHERE 
+        p.FechaDevolucion IS NULL;
+END;
+GO
+EXEC ListarLibrosNoDevueltos;
+
+-- Procedimiento para Registrar la Devolución de un Libro
+CREATE PROCEDURE RegistrarDevolucionLibro
+    @PrestamoID INT
+AS
+BEGIN
+    DECLARE @LibroID INT;
+    DECLARE @FechaPrestamo DATE;
+    DECLARE @FechaDevolucion DATE;
+    DECLARE @TiempoPrestamo INT; -- Tiempo en días
+
+    -- Obtén los detalles del préstamo
+    SELECT 
+        @LibroID = LibroID,
+        @FechaPrestamo = FechaPrestamo,
+        @FechaDevolucion = GETDATE() -- Fecha actual como fecha de devolución
+    FROM Prestamos
+    WHERE PrestamoID = @PrestamoID;
+
+    -- Calcula el tiempo transcurrido en días
+    SET @TiempoPrestamo = DATEDIFF(DAY, @FechaPrestamo, @FechaDevolucion);
+
+    -- Marca el préstamo como devuelto
+    UPDATE Prestamos
+    SET 
+        FechaDevolucion = @FechaDevolucion,
+        TiempoPrestamo = @TiempoPrestamo,
+        Estado = 'Devuelto'
+    WHERE PrestamoID = @PrestamoID;
+
+    -- Aumenta el stock del libro
+    UPDATE Libros
+    SET Stock = Stock + 1
+    WHERE LibroID = @LibroID;
+END;
+GO
+
+-- Ejecutar el procedimiento
+EXEC RegistrarDevolucionLibro @PrestamoID = 1;

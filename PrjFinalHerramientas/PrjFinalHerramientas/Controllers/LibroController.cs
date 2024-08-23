@@ -85,5 +85,36 @@ namespace PrjFinalHerramientas.Controllers
 
             return $"Libro {libroBuscado!.Titulo} eliminado exitosamente.";
         }
+
+        // GET api/<LibroController>/GetLibrosNoDevueltos
+        [HttpGet("GetLibrosNoDevueltos")]
+        public List<ListarLibrosNoDevueltos> GetLibrosNoDevueltos()
+        {
+            var listado = context.ListarLibrosNoDevueltos.FromSql($"EXEC ListarLibrosNoDevueltos").ToList();
+            return listado;
+        }
+        // PUT api/<LibroController>
+        [HttpPut("PutRegistrarDevolucionLibro/{prestamoID}")]
+        public async Task<IActionResult> PutRegistrarDevolucionLibro(int prestamoID)
+        {   
+            if (prestamoID <= 0)
+            {
+                return BadRequest("ID de préstamo inválido.");
+            }
+            try
+            {
+
+                await context.Database.ExecuteSqlAsync($"EXEC RegistrarDevolucionLibro {prestamoID}");
+                await context.SaveChangesAsync();
+                return Ok($"Préstamo: {prestamoID}, se ha devuelto correctamente.");
+
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error: {ex.Message}");
+            }
+
+        }
     }
 }
