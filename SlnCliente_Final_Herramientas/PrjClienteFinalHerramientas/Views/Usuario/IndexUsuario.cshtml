@@ -15,8 +15,12 @@
 <br/>
 
 <p>
-    <a asp-action="CreateUsuario">Nuevo Usuario</a> |
-    <a asp-controller="ListarUsuariosConPenalidades" asp-action="ListarUsuariosPenalidad" class="btn btn-info">Consulta Penalidades</a>
+<p>
+    <a asp-action="CreateUsuario" class="btn btn-success">Nuevo Usuario</a> |
+    <a asp-controller="ListarUsuariosConPenalidades" asp-action="ListarUsuariosPenalidad" class="btn btn-info">Consulta Penalidades</a> |
+    <a asp-controller="sp_ObtenerUsuariosInactivos" asp-action="ListarUsuariosInactivos" class="btn btn-info">Usuarios Inactivos</a>
+</p>
+
 
 
 

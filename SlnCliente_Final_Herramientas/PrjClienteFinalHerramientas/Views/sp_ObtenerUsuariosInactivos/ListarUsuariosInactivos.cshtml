@@ -1,14 +1,12 @@
-﻿@model IEnumerable<PrjClienteFinalHerramientas.Models.ListarUsuariosConPenalidades>
+﻿@model IEnumerable<PrjClienteFinalHerramientas.Models.sp_ObtenerUsuariosInactivos>
 
 @{
-    ViewData["Title"] = "ListarUsuariosPenalidad";
+    ViewData["Title"] = "ListarUsuariosInactivos";
 }
 
-<h1>ListarUsuariosPenalidad</h1>
+<h1>ListarUsuariosInactivos</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -78,10 +76,10 @@
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
+          
 }
     </tbody>
 </table>
 <p>
     <a asp-action="IndexUsuario" asp-controller="Usuario" class="btn btn-primary">Regresar</a>
 </p>
-

@@ -31,6 +31,8 @@ public partial class HpiifinalBibliotecaContext : DbContext
 
     public virtual DbSet<ListarUsuariosConPenalidades> ListarUsuariosConPenalidades { get; set; }
 
+    public virtual DbSet<sp_ObtenerUsuariosInactivos> sp_ObtenerUsuariosInactivos { get; set; }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     { }
