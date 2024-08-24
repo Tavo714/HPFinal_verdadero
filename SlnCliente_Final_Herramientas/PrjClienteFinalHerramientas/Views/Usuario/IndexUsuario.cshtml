@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PrjClienteFinalHerramientas.Models.Usuario>
 
 @{
-    ViewData["Title"] = "IndexUsuario";
+    ViewData["Title"] = "Lista de Usuarios";
 }
 
 <h1>IndexUsuario</h1>
@@ -97,3 +97,10 @@
 }
     </tbody>
 </table>
+
+<br />
+<div class="text-center">
+    <p>
+        Cantidad de Usuarios: <strong>@Model.Count()</strong>
+    </p>
+</div>

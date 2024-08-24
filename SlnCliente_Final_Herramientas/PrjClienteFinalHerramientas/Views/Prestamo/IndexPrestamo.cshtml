@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PrjClienteFinalHerramientas.Models.Prestamo>
 
 @{
-    ViewData["Title"] = "IndexPrestamo";
+    ViewData["Title"] = "Lista de Prestamos";
 }
 
 <h1>IndexPrestamo</h1>
@@ -64,3 +64,10 @@
 }
     </tbody>
 </table>
+
+<br />
+<div class="text-center">
+    <p>
+        Cantidad de Usuarios: <strong>@Model.Count()</strong>
+    </p>
+</div>

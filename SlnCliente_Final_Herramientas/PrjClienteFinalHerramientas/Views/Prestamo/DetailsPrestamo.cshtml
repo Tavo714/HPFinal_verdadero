@@ -1,7 +1,7 @@
 ﻿@model PrjClienteFinalHerramientas.Models.Prestamo
 
 @{
-    ViewData["Title"] = "DetailsPrestamo";
+    ViewData["Title"] = "Detalle Prestamo";
 }
 
 <h1>DetailsPrestamo</h1>
@@ -43,6 +43,6 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Editar", "EditPrestamo", new { id = Model.PrestamoId }) |
     <a asp-action="IndexPrestamo">Regresar</a>
 </div>
