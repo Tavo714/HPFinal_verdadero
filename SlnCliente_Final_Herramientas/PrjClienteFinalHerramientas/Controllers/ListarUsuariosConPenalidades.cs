@@ -61,5 +61,37 @@ namespace PrjClienteFinalHerramientas.Controllers
                 return View(new List<PrjClienteFinalHerramientas.Models.ListarUsuariosConPenalidades>().AsEnumerable());
             }
         }
+
+        // Método para cambiar la penalidad del usuario
+        [HttpPost]
+        public async Task<IActionResult> CambiarPenalidad(int UsuarioID)
+        {
+            try
+            {
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    // Realizar la solicitud POST al servicio que ejecuta el procedimiento almacenado
+                    var response = await httpClient.PostAsync($"{rutaBase}CambiarPenalidad/{UsuarioID}", null);
+
+                    // Verificar el estado de la respuesta
+                    if (response.IsSuccessStatusCode)
+                    {
+                        TempData["mensaje"] = "La penalidad ha sido cambiada con éxito.";
+                    }
+                    else
+                    {
+                        TempData["mensaje"] = "Error al cambiar la penalidad.";
+                    }
+
+                    // Redirigir a la vista de penalidades
+                    return RedirectToAction("ListarUsuariosPenalidad");
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["mensaje"] = $"Error al cambiar la penalidad: {ex.Message}";
+                return RedirectToAction("ListarUsuariosPenalidad");
+            }
+        }
     }
 }
