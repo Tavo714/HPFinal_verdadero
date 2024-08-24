@@ -28,7 +28,9 @@ public partial class HpiifinalBibliotecaContext : DbContext
     //Procedimientos
     public virtual DbSet<sp_GetHistorialPrestamosPorUsuario> sp_GetHistorialPrestamosPorUsuario { get; set; }
     public virtual DbSet<ListarLibrosNoDevueltos> ListarLibrosNoDevueltos { get; set; }
-    
+
+    public virtual DbSet<ListarUsuariosConPenalidades> ListarUsuariosConPenalidades { get; set; }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     { }
