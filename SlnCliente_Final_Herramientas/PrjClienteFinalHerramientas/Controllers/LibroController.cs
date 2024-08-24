@@ -36,6 +36,19 @@ namespace PrjClienteFinalHerramientas.Controllers
                 return JsonConvert.DeserializeObject<List<Libro>>(cadena)!;
             };
         }
+        public async Task<List<Libro>> GetLibrosInactivos()
+        {
+            using (HttpClient httpClient = new HttpClient())
+            {
+                //realizar solicitud o llamada de un servicio
+                var respuesta = await httpClient.GetAsync(rutaBase + "GetLibrosInactivos");
+                //covertir el contenido devuelto a una cadena(string)
+                string cadena = await respuesta.Content.ReadAsStringAsync();
+                Console.WriteLine("Response content: " + cadena);
+                //deserealizar la variable cadena Json a un List de propietario
+                return JsonConvert.DeserializeObject<List<Libro>>(cadena)!;
+            };
+        }
         public async Task<Libro> GetLibro(int LibroId)
         {
             using (HttpClient httpClient = new HttpClient())
@@ -105,6 +118,13 @@ namespace PrjClienteFinalHerramientas.Controllers
         public async Task<ActionResult> IndexLibros()
         {
             LibroLisT = await GetLibros();
+            return View(LibroLisT);
+        }
+
+        // GET: LibroController
+        public async Task<ActionResult> LibrosInactivos()
+        {
+            LibroLisT = await GetLibrosInactivos();
             return View(LibroLisT);
         }
 

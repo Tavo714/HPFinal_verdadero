@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using PrjFinalHerramientas.Models;
 
@@ -21,6 +22,23 @@ namespace PrjFinalHerramientas.Controllers
         public List<Libro> GetLibros()
         {
             var listado = context.Libros.Include(l => l.Autor).Where(c => c.Estado == "Activo").Select(l => new Libro
+            {
+                LibroId = l.LibroId,
+                Titulo = l.Titulo,
+                AñoPublicacion = l.AñoPublicacion,
+                Autor = new Autore
+                {
+                    AutorId = l.Autor!.AutorId,
+                    Nombre = l.Autor.Nombre
+                },
+                Stock = l.Stock
+            }).ToList();
+            return listado;
+        }
+        [HttpGet("GetLibrosInactivos")]
+        public List<Libro> GetLibrosInactivos()
+        {
+            var listado = context.Libros.Include(l => l.Autor).Where(c => c.Estado == "Inactivo").Select(l => new Libro
             {
                 LibroId = l.LibroId,
                 Titulo = l.Titulo,
@@ -115,6 +133,23 @@ namespace PrjFinalHerramientas.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error: {ex.Message}");
             }
 
+        }
+
+        
+        // GET api/<LibroController>/BuscarLibros
+        [HttpGet("GetBuscarLibros")]
+        public List<BuscarLibros> BuscarLibros(string? titulo, int? autorId, int? añoPublicacion, string? estado)
+        {
+            var parametros = new[]
+            {
+                new SqlParameter("@Titulo", titulo ?? (object)DBNull.Value),
+                new SqlParameter("@AutorId", autorId ?? (object)DBNull.Value),
+                new SqlParameter("@AñoPublicacion", añoPublicacion ?? (object)DBNull.Value),
+                new SqlParameter("@Estado", estado ?? (object)DBNull.Value)
+            };
+
+            var resultados = context.BuscarLibros.FromSqlRaw($"EXEC BuscarLibros @Titulo, @AutorId, @AñoPublicacion, @Estado", parametros).ToList();
+            return resultados;
         }
     }
 }

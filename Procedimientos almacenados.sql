@@ -47,9 +47,11 @@ EXEC CambiarPenalidadUsuario @UsuarioID = 3;
 
 drop procedure CambiarPenalidadUsuario
 
+
+
 --PROCEDIMIENTO BUSCAR LIBROS
 
-CREATE PROCEDURE sp_SearchLibros
+CREATE PROCEDURE BuscarLibros
     @Titulo NVARCHAR(255) = NULL,
     @AutorId INT = NULL,
     @AñoPublicacion INT = NULL,
@@ -73,15 +75,15 @@ BEGIN
       AND (@Estado IS NULL OR L.Estado = @Estado);
 END;
 
-EXEC sp_SearchLibros
-    @Titulo = 'Cien años de soledad';
+EXEC BuscarLibros
+    @Titulo = '';
 
-EXEC sp_SearchLibros
-    @Titulo = 'Cien años de soledad',
+EXEC BuscarLibros
+    @AutorId = 
     @AñoPublicacion = 1967,
     @Estado = 'Disponible';
 
-EXEC sp_SearchLibros;
+EXEC BuscarLibros;
 
 --VERIFICAR DISPONIBILIDAD DE LIBRO
 
@@ -165,3 +167,43 @@ GO
 
 -- Ejecutar el procedimiento
 EXEC RegistrarDevolucionLibro @PrestamoID = 1;
+
+
+select * from Libros
+
+UPDATE Libros
+SET AutorID = 1
+WHERE titulo = 'El Principito' AND AutorID IS NULL;
+
+
+select * from Prestamos
+select * from Usuarios
+
+
+
+-------------------------------------------------
+
+--TRAER USUARIOS POR ESTADO
+CREATE PROCEDURE sp_ObtenerUsuariosInactivos
+AS
+BEGIN
+    SELECT 
+        UsuarioID, 
+        Nombre, 
+        Email, 
+        FechaRegistro, 
+        DNI, 
+        Direccion, 
+        DistritoID, 
+        Telefono, 
+        EstadoUsuario, 
+        Penalidad
+    FROM 
+        Usuarios
+    WHERE 
+        EstadoUsuario = 'Inactivo';
+END;
+
+EXEC sp_ObtenerUsuariosInactivos;
+
+select * from Usuarios

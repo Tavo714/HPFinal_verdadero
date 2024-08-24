@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PrjClienteFinalHerramientas.Models.Libro>
+
+@{
+    ViewData["Title"] = "LibrosInactivos";
+}
+
+<h1>Libros Inactivos</h1>
+
+<p>
+    <a asp-action="IndexLibros">Regresar a la Lista</a>
+</p>
+
+<div class="table-responsive pt-4">
+    <table class="table table-striped table-bordered border-primary">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LibroId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AñoPublicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor!.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibroId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AñoPublicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor!.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>     
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+<div>
+    <p>Cantidad de Libros: <strong>@Model.Count()</strong></p>
+</div>

@@ -7,9 +7,11 @@
 <h1>Listado de Libros</h1>
 
 <p>
-    <a asp-action="CreateLibro">Agregar</a>
-    <a asp-controller="ListarLibrosNoDevueltos" asp-action="ListarLibrosNoDevueltos" class="btn btn-info">Consulta1</a>
+    <a asp-action="CreateLibro" class="btn btn-outline-info">Agregar</a>|
+    <a asp-action="LibrosInactivos" class="btn btn-outline-warning">LibrosInactivos</a>|
+    <a asp-controller="ListarLibrosNoDevueltos" asp-action="ListarLibrosNoDevueltos" class="btn btn-outline-danger">Libros No Devueltos</a>
 </p>
+
 
 @if (TempData["mensaje"] != null)
 {
@@ -37,8 +39,6 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Stock) 
                 </th>
-                
-                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>

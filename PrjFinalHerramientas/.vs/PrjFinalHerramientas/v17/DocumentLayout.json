@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|d:\\4\u00B0cciclo\\herramientas de programaci\u00F3n\\hpfinal_verdadero\\prjfinalherramientas\\prjfinalherramientas\\models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|solutionrelative:prjfinalherramientas\\models\\libro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|d:\\4\u00B0cciclo\\herramientas de programaci\u00F3n\\hpfinal_verdadero\\prjfinalherramientas\\prjfinalherramientas\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|solutionrelative:prjfinalherramientas\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|d:\\4\u00B0cciclo\\herramientas de programaci\u00F3n\\hpfinal_verdadero\\prjfinalherramientas\\prjfinalherramientas\\models\\hpiifinalbibliotecacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|solutionrelative:prjfinalherramientas\\models\\hpiifinalbibliotecacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|d:\\4\u00B0cciclo\\herramientas de programaci\u00F3n\\hpfinal_verdadero\\prjfinalherramientas\\prjfinalherramientas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|solutionrelative:prjfinalherramientas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|d:\\4\u00B0cciclo\\herramientas de programaci\u00F3n\\hpfinal_verdadero\\prjfinalherramientas\\prjfinalherramientas\\models\\listarlibrosnodevueltos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AFEACAA5-B5A8-4663-B195-6D2125E0DFDF}|PrjFinalHerramientas\\PrjFinalHerramientas.csproj|solutionrelative:prjfinalherramientas\\models\\listarlibrosnodevueltos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,52 +30,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Program.cs",
-              "RelativeDocumentMoniker": "PrjFinalHerramientas\\Program.cs",
-              "ToolTip": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Program.cs",
-              "RelativeToolTip": "PrjFinalHerramientas\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAZAAAA",
+              "DocumentIndex": 0,
+              "Title": "Libro.cs",
+              "DocumentMoniker": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Models\\Libro.cs",
+              "RelativeDocumentMoniker": "PrjFinalHerramientas\\Models\\Libro.cs",
+              "ToolTip": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Models\\Libro.cs",
+              "RelativeToolTip": "PrjFinalHerramientas\\Models\\Libro.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T20:03:52.248Z"
+              "WhenOpened": "2024-08-24T21:35:12.923Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "HpiifinalBibliotecaContext.cs",
               "DocumentMoniker": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Models\\HpiifinalBibliotecaContext.cs",
               "RelativeDocumentMoniker": "PrjFinalHerramientas\\Models\\HpiifinalBibliotecaContext.cs",
               "ToolTip": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Models\\HpiifinalBibliotecaContext.cs",
               "RelativeToolTip": "PrjFinalHerramientas\\Models\\HpiifinalBibliotecaContext.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAkwB4AAAAEAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA1wB0AAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T17:01:16.302Z"
+              "WhenOpened": "2024-08-24T20:35:53.188Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LibroController.cs",
               "DocumentMoniker": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Controllers\\LibroController.cs",
               "RelativeDocumentMoniker": "PrjFinalHerramientas\\Controllers\\LibroController.cs",
               "ToolTip": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Controllers\\LibroController.cs",
               "RelativeToolTip": "PrjFinalHerramientas\\Controllers\\LibroController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAewB8AAAASAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCUAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-23T16:45:47.156Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ListarLibrosNoDevueltos.cs",
-              "DocumentMoniker": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Models\\ListarLibrosNoDevueltos.cs",
-              "RelativeDocumentMoniker": "PrjFinalHerramientas\\Models\\ListarLibrosNoDevueltos.cs",
-              "ToolTip": "D:\\4\u00B0cCiclo\\Herramientas de Programaci\u00F3n\\HPFinal_verdadero\\PrjFinalHerramientas\\PrjFinalHerramientas\\Models\\ListarLibrosNoDevueltos.cs",
-              "RelativeToolTip": "PrjFinalHerramientas\\Models\\ListarLibrosNoDevueltos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T16:39:59.934Z"
             }
           ]
         }

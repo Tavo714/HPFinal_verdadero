@@ -72,3 +72,13 @@ JSON:
 
 http://localhost:5196/api/Libro/PutRegistrarDevolucionLibro/{id}
 
+http://localhost:5196/api/Libro/GetBuscarLibros?titulo=e&autorId=19&a%C3%B1oPublicacion=1954&estado=Activo
+{
+    "libroId": 19,
+    "titulo": "El Señor de los Anillos",
+    "añoPublicacion": 1954,
+    "autor": "J.R.R. Tolkien",
+    "stock": 8,
+    "estado": "Activo"
+}
+
