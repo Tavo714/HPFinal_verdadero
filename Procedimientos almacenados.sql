@@ -165,3 +165,43 @@ GO
 
 -- Ejecutar el procedimiento
 EXEC RegistrarDevolucionLibro @PrestamoID = 1;
+
+
+select * from Libros
+
+UPDATE Libros
+SET AutorID = 1
+WHERE titulo = 'El Principito' AND AutorID IS NULL;
+
+
+select * from Prestamos
+select * from Usuarios
+
+
+
+-------------------------------------------------
+
+--TRAER USUARIOS POR ESTADO
+CREATE PROCEDURE sp_ObtenerUsuariosInactivos
+AS
+BEGIN
+    SELECT 
+        UsuarioID, 
+        Nombre, 
+        Email, 
+        FechaRegistro, 
+        DNI, 
+        Direccion, 
+        DistritoID, 
+        Telefono, 
+        EstadoUsuario, 
+        Penalidad
+    FROM 
+        Usuarios
+    WHERE 
+        EstadoUsuario = 'Inactivo';
+END;
+
+EXEC sp_ObtenerUsuariosInactivos;
+
+select * from Usuarios
